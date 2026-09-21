@@ -144,6 +144,10 @@ Tabela dimensão com as informações dos aeroportos.
 | Portaria de Registro | Número e ano da última Portaria de cadastro do aeródromo dentro da validade, ou seja, o ato que dá regularidade cadastral à infraestrutura. A Portaria é indicada no formato PAxxxx-yyyy, onde PA representa Portaria ANAC, xxxx é o ano de publicação e yyyy é o número da Portaria. Assim, por exemplo a indicação PA2020-0001 representa uma Portaria ANAC número 0001 do ano 2020. |
 | Link Portaria | Link para acesso direto ao arquivo .pdf da portaria de cadastro do aeródromo. |
 
+
+Além desses metadados a ANAC disponibiliza um dicionário de variaveis e regras:  
+https://www.gov.br/anac/pt-br/assuntos/regulados/empresas-aereas/Instrucoes-para-a-elaboracao-e-apresentacao-das-demonstracoes-contabeis/descricao-de-variaveis
+
 [^2] Nota: LATGEOPOINT e LONGEOPOINT não sao mencionados na documentação oficial, mas estão presentes no arquivo csv, seu conteudo foi inferido a partir dos dados.
 
 
@@ -157,6 +161,7 @@ As etapas dessa fase e os detalhes de implementação podem ser encontrados nos 
 Em resumo, foi criado um catalogo com schemas staging, bronze, silver e gold alem de um volume de arquivos no schema staging. Isso foi realizado diretamente por código disponível no notebook 01.
 
 ![Catálogo com os schemas staging, bronze, silver e gold](imagens/schemas.png)
+
 > Catálogo com os schemas staging, bronze, silver e gold
 
 
@@ -165,15 +170,19 @@ A partir dai os dados foram consultados diretamente nas suas fontes online, util
 Os arquivos vra foram salvos em uma subpasta, cada um em formato .csv e seu nome original. O arquivo de aerodromos foi salvo na raiz do volume também como csv. Já o arquivo de empresas foi salvo como .json. Mantivemos a extensão original de cada arquivo.
 
 ![Estrutura do Schema Staging](imagens/schema_staging.png)
+
 > Estrutura do Schema Staging
+
 ![Subpasta com os arquivos VRA](imagens/volume_vra.png)
+
 > Subpasta com os arquivos VRA
 
 **Nessa etapa nenhum dado foi modificado, apenas salvo como se encontram em suas fontes originais.**
 
 
-
 ## 3. Modelagem e Catálogo de Dados
+
+
 
 ## 4. Pipeline de Dados
 
