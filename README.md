@@ -7,7 +7,6 @@
 
 # Dados de Pontualidade de Viagens Aéreas no Brasil
 
----
 
 ## Sumário
 - [1. Contexto de Negócios e Perguntas](#1-contexto-de-negócios-e-perguntas)
